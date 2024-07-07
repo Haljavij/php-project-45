@@ -1,5 +1,7 @@
 {
     "name": "hexlet/code",
+    "description": "Brain-games bimbumbam",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -11,5 +13,8 @@
             "email": "haljavij@yandex.ru"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+	    "bin/brain-games"
+    ]
 }
