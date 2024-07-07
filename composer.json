@@ -2,7 +2,10 @@
     "name": "hexlet/code",
     "description": "Brain-games bimbumbam",
     "license": "MIT",
-    "autoload": {
+    "autoload": { 
+        "files": [
+            "src/Cli.php"
+        ], 
         "psr-4": {
             "Hexlet\\Code\\": "src/"
         }
@@ -13,7 +16,9 @@
             "email": "haljavij@yandex.ru"
         }
     ],
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.0"
+    },
     "bin": [
 	    "bin/brain-games"
     ]
