@@ -11,7 +11,7 @@ function run(string $gameDescription, callable $round)
 {
     line("Welcome to the Brain Games!");
     $name = prompt("May I have your name?");
-    line("Hello {$name}");
+    line("Hello, {$name}");
     line($gameDescription);
 
     for ($i = 0; $i < ROUNDS; $i++) {
