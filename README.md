@@ -24,8 +24,10 @@ Requirements
 Installation
 --------------------------------------------------------------------
 
+Clone repositor
+
 ```source-shell
-composer create-project hexlet/code
+git clone git@github.com:Haljavij/php-project-45.git
 ```
 
 -   Install dependencies
