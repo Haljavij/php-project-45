@@ -25,7 +25,7 @@ Installation
 --------------------------------------------------------------------
 
 ```source-shell
-composer create-project foreachq/brain-games
+composer create-project hexlet/code
 ```
 
 -   Install dependencies
