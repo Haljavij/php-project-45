@@ -6,6 +6,24 @@
 Brain Games
 ===========
 
+"Brain Games" - a set of five console games based on the principle of popular mobile brain-boosting applications. Each game asks questions that need to be answered correctly. After three correct answers, it is considered that the game is over. Incorrect answers end the game and offer to go through it again.
+
+Games:
+
+-   Calculator. Arithmetic expressions to be evaluated.
+-   Progression. Search for missing numbers in a sequence of numbers.
+-   Definition of an even number.
+-   Determining the greatest common divisor.
+-   Definition of a prime number.
+
+Requirements
+--------------------------------------------------------------------
+-   php 7.4
+-   composer 2.*
+
+Installation
+--------------------------------------------------------------------
+зрз
 https://asciinema.org/a/UsdKnUJaB9MKr1J21V5suJESk
 https://asciinema.org/a/rIeVaCyfM7Xm9Pkg6mzeJxqDq
 https://asciinema.org/a/EqpzjdjHg8KmxbF1hYoMXnZsH
