@@ -23,7 +23,36 @@ Requirements
 
 Installation
 --------------------------------------------------------------------
-зрз
+
+```source-shell
+composer create-project foreachq/brain-games
+```
+
+-   Install dependencies
+
+```
+make install
+
+```
+
+Usage
+------------------------------------------------------
+
+-   Choose 1 game from list:
+
+    -   Definition of an even number (brain-even)
+    -   Calculator (brain-calc)
+    -   Determining the greatest common divisor (brain-gcd)
+    -   Progression (brain-progression)
+    -   Definition of a prime number (brain-prime)
+-   Run make command:
+
+```
+make <game-name>
+```
+Test 
+------------------------------------------------------
+
 https://asciinema.org/a/UsdKnUJaB9MKr1J21V5suJESk
 https://asciinema.org/a/rIeVaCyfM7Xm9Pkg6mzeJxqDq
 https://asciinema.org/a/EqpzjdjHg8KmxbF1hYoMXnZsH
