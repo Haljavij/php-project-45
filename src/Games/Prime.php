@@ -2,28 +2,15 @@
 
 namespace BrainGames\Games\Prime;
 
+use const BrainGames\Engine\ROUNDS;
+
 use function BrainGames\Engine\run;
 use function cli\line;
 use function cli\prompt;
 
 const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const MIN_RANGE = 1;
-const MAX_RANGE = 100;
-
-function play(): void
-{
-    $round = function () {
-        $number = rand(MIN_RANGE, MAX_RANGE);
-
-        $answer = prompt("Question: {$number}");
-        line("You answer: {$answer}");
-        $correctAnswer = isPrime($number) ? 'yes' : 'no';
-
-        return [$answer, $correctAnswer];
-    };
-
-    run(GAME_DESCRIPTION, $round);
-}
+const MIN_NUM = 1;
+const MAX_NUM = 100;
 
 function isPrime(int $number): bool
 {
@@ -39,3 +26,16 @@ function isPrime(int $number): bool
 
     return true;
 }
+
+function play(): void
+{
+    $result = [];
+    for ($i = 0; $i < ROUNDS; $i++) {
+        $question = rand(MIN_NUM, MAX_NUM);
+        $correctAnswer = isPrime($question) ? 'yes' : 'no';
+        $result[] = [$question, $correctAnswer];
+    }
+
+    run(GAME_DESCRIPTION, $result);
+}
+

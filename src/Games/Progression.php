@@ -2,47 +2,37 @@
 
 namespace BrainGames\Games\Progression;
 
+use const BrainGames\Engine\ROUNDS;
+
 use function BrainGames\Engine\run;
 use function cli\line;
 use function cli\prompt;
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
-const MIN_PROGRESSION_LENGTH = 5;
-const MAX_PROGRESSION_LENGTH = 10;
-const MIN_STEP_RANGE = 1;
+const MIN_STEP_RANGE = 2;
 const MAX_STEP_RANGE = 5;
 const MIN_START_RANGE = -10;
 const MAX_START_RANGE = 10;
 
-function play(): void
+function makeProgression(int $step, int $start = 0): array
 {
-    $round = function () {
-        $length = rand(MIN_PROGRESSION_LENGTH, MAX_PROGRESSION_LENGTH);
-        $step = rand(MIN_STEP_RANGE, MAX_STEP_RANGE);
-        $start = rand(MIN_START_RANGE, MAX_START_RANGE);
-        $progression = makeProgression($length, $step, $start);
-
-        $itemId = rand(0, $length - 1);
-        $hiddenItem = $progression[$itemId];
-        $progression[$itemId] = '..';
-        $progression = implode(' ', $progression);
-
-        $answer = (int)prompt("Question: {$progression}");
-        line("You answer: {$answer}");
-
-        return[$answer, $hiddenItem];
-    };
-
-    run(GAME_DESCRIPTION, $round);
+    return range($start, 30, $step);
 }
 
-function makeProgression(int $length, int $step, int $start = 0): array
+function play(): void
 {
-    $result = [$start];
+    $result = [];
+    for ($i = 0; $i < ROUNDS; $i++) {
+        $step = rand(MIN_STEP_RANGE, MAX_STEP_RANGE);
+        $start = rand(MIN_START_RANGE, MAX_START_RANGE);
+        $progression = makeProgression($step, $start);
 
-    for ($i = 1; $i < $length; $i++) {
-        $result[$i] = $result[$i - 1] + $step;
+        $itemId = rand(0, count($progression) - 1);
+        $correctAnswer = (string) $progression[$itemId];
+        $progression[$itemId] = '..';
+        $question = implode(' ', $progression);
+        $result[] = [$question, $correctAnswer];
     }
 
-    return $result;
+    run(GAME_DESCRIPTION, $result);
 }

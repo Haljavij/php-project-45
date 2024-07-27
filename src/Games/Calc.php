@@ -2,30 +2,40 @@
 
 namespace BrainGames\Games\Calc;
 
+use const BrainGames\Engine\ROUNDS;
+
 use function BrainGames\Engine\run;
 use function cli\line;
 use function cli\prompt;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
-const MIN_RANGE = 1;
-const MAX_RANGE = 2;
-const OPERATIONS = ['+', '-', '*'];
+const MIN_NUM = 1;
+const MAX_NUM = 50;
+const OPERATOR = ['+', '-', '*'];
 
+
+function calc(int $num1, int $num2, string $operator): int
+{
+    if ($operator === '+') {
+        return $num1 + $num2;
+    } elseif ($operator === '-') {
+        return $num1 - $num2;
+    } else {
+        return $num1 * $num2;
+    }
+}
 function play(): void
 {
-    $round = function () {
-        $a = rand(MIN_RANGE, MAX_RANGE);
-        $b = rand(MIN_RANGE, MAX_RANGE);
-        $operationId = rand(0, count(OPERATIONS) - 1);
-        $operation = OPERATIONS[$operationId];
-        $expression = "{$a} {$operation} {$b}";
+    $result = [];
+    for ($i = 0; $i < ROUNDS; $i++) {
+        $a = rand(MIN_NUM, MAX_NUM);
+        $b = rand(MIN_NUM, MAX_NUM);
+        $operationId = array_rand(OPERATOR);
+        $operation = OPERATOR[$operationId];
+        $question = "{$a} {$operation} {$b}";
+        $correctAnswer = (string) calc($a, $b, $operation);
+        $result[] = [$question, $correctAnswer];
+    }
 
-        $answer = (int)prompt("Question: $expression");
-        line("You answer: {$answer}");
-        $correctAnswer = eval("return $expression;");
-
-        return [$answer, $correctAnswer];
-    };
-
-    run(GAME_DESCRIPTION, $round);
+    run(GAME_DESCRIPTION, $result);
 }
