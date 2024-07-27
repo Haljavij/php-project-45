@@ -2,11 +2,11 @@
 
 namespace BrainGames\Games\Calc;
 
-use const BrainGames\Engine\ROUNDS;
-
 use function BrainGames\Engine\run;
 use function cli\line;
 use function cli\prompt;
+
+use const BrainGames\Engine\ROUNDS;
 
 const GAME_DESCRIPTION = 'What is the result of the expression?';
 const MIN_NUM = 1;

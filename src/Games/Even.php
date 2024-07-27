@@ -2,11 +2,11 @@
 
 namespace BrainGames\Games\Even;
 
-use const BrainGames\Engine\ROUNDS;
-
 use function BrainGames\Engine\run;
 use function cli\line;
 use function cli\prompt;
+
+use const BrainGames\Engine\ROUNDS;
 
 const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 const MIN_NUM = 1;

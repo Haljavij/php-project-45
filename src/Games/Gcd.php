@@ -2,11 +2,11 @@
 
 namespace BrainGames\Games\Gcd;
 
-use const BrainGames\Engine\ROUNDS;
-
 use function BrainGames\Engine\run;
 use function cli\line;
 use function cli\prompt;
+
+use const BrainGames\Engine\ROUNDS;
 
 const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 const MIN_NUM = 1;
