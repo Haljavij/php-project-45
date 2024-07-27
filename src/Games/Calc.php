@@ -13,17 +13,6 @@ const MIN_NUM = 1;
 const MAX_NUM = 50;
 const OPERATOR = ['+', '-', '*'];
 
-
-function calc(int $num1, int $num2, string $operator): int
-{
-    if ($operator === '+') {
-        return $num1 + $num2;
-    } elseif ($operator === '-') {
-        return $num1 - $num2;
-    } else {
-        return $num1 * $num2;
-    }
-}
 function play(): void
 {
     $result = [];
@@ -38,4 +27,15 @@ function play(): void
     }
 
     run(GAME_DESCRIPTION, $result);
+}
+
+function calc(int $num1, int $num2, string $operator): int
+{
+    if ($operator === '+') {
+        return $num1 + $num2;
+    } elseif ($operator === '-') {
+        return $num1 - $num2;
+    } else {
+        return $num1 * $num2;
+    }
 }

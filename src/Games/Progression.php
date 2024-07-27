@@ -14,11 +14,6 @@ const MAX_STEP_RANGE = 5;
 const MIN_START_RANGE = -10;
 const MAX_START_RANGE = 10;
 
-function makeProgression(int $step, int $start = 0): array
-{
-    return range($start, 30, $step);
-}
-
 function play(): void
 {
     $result = [];
@@ -35,4 +30,9 @@ function play(): void
     }
 
     run(GAME_DESCRIPTION, $result);
+}
+
+function makeProgression(int $step, int $start = 0): array
+{
+    return range($start, 30, $step);
 }

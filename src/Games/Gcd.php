@@ -12,11 +12,6 @@ const GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 const MIN_NUM = 1;
 const MAX_NUM = 20;
 
-function gcd(int $num1, int $num2): int
-{
-    return (bool)($num1 % $num2) ? gcd($num2, $num1 % $num2) : $num2;
-}
-
 function play(): void
 {
     $result = [];
@@ -30,4 +25,9 @@ function play(): void
     }
 
     run(GAME_DESCRIPTION, $result);
+}
+
+function gcd(int $num1, int $num2): int
+{
+    return (bool)($num1 % $num2) ? gcd($num2, $num1 % $num2) : $num2;
 }

@@ -12,6 +12,18 @@ const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answe
 const MIN_NUM = 1;
 const MAX_NUM = 100;
 
+function play(): void
+{
+    $result = [];
+    for ($i = 0; $i < ROUNDS; $i++) {
+        $question = rand(MIN_NUM, MAX_NUM);
+        $correctAnswer = isPrime($question) ? 'yes' : 'no';
+        $result[] = [$question, $correctAnswer];
+    }
+
+    run(GAME_DESCRIPTION, $result);
+}
+
 function isPrime(int $number): bool
 {
     if ($number < 2) {
@@ -26,16 +38,3 @@ function isPrime(int $number): bool
 
     return true;
 }
-
-function play(): void
-{
-    $result = [];
-    for ($i = 0; $i < ROUNDS; $i++) {
-        $question = rand(MIN_NUM, MAX_NUM);
-        $correctAnswer = isPrime($question) ? 'yes' : 'no';
-        $result[] = [$question, $correctAnswer];
-    }
-
-    run(GAME_DESCRIPTION, $result);
-}
-

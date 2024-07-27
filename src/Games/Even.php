@@ -12,10 +12,6 @@ const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "
 const MIN_NUM = 1;
 const MAX_NUM = 100;
 
-function isEven(int $num): bool
-{
-    return $num % 2 === 0;
-}
 function play()
 {
     $result = [];
@@ -27,4 +23,9 @@ function play()
     }
 
     run(GAME_DESCRIPTION, $result);
+}
+
+function isEven(int $num): bool
+{
+    return $num % 2 === 0;
 }
