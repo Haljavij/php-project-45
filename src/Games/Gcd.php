@@ -15,7 +15,6 @@ const MAX_NUM = 20;
 function play(): void
 {
     $result = [];
-    
     for ($i = 0; $i < ROUNDS; $i++) {
         $one = rand(MIN_NUM, MAX_NUM);
         $two = rand(MIN_NUM, MAX_NUM);

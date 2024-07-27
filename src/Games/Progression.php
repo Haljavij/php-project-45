@@ -2,11 +2,11 @@
 
 namespace BrainGames\Games\Progression;
 
-use const BrainGames\Engine\ROUNDS;
-
 use function BrainGames\Engine\run;
 use function cli\line;
 use function cli\prompt;
+
+use const BrainGames\Engine\ROUNDS;
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
 const MIN_STEP_RANGE = 2;

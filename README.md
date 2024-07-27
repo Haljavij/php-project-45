@@ -24,13 +24,13 @@ Requirements
 Installation
 --------------------------------------------------------------------
 
-Clone repositor
+Clone repository
 
 ```source-shell
 git clone git@github.com:Haljavij/php-project-45.git
 ```
 
--   Install dependencies
+-   Install
 
 ```
 make install
