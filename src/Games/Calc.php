@@ -29,6 +29,7 @@ function play(): void
 
 function calc(int $num1, int $num2, string $operator): int
 {
+    $result = 0;
     switch ($operator) {
         case '+':
             $result = $num1 + $num2;
