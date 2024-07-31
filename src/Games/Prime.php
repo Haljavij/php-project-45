@@ -3,8 +3,6 @@
 namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\run;
-use function cli\line;
-use function cli\prompt;
 
 use const BrainGames\Engine\ROUNDS;
 
@@ -15,7 +13,7 @@ const MAX_NUM = 100;
 function play(): void
 {
     $result = [];
-    for ($i = 0; $i < ROUNDS; $i++) {
+    for ($i = 1; $i <= ROUNDS; $i++) {
         $question = rand(MIN_NUM, MAX_NUM);
         $correctAnswer = isPrime($question) ? 'yes' : 'no';
         $result[] = [$question, $correctAnswer];

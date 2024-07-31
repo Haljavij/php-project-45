@@ -3,8 +3,6 @@
 namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Engine\run;
-use function cli\line;
-use function cli\prompt;
 
 use const BrainGames\Engine\ROUNDS;
 
@@ -15,7 +13,7 @@ const MAX_NUM = 20;
 function play(): void
 {
     $result = [];
-    for ($i = 0; $i < ROUNDS; $i++) {
+    for ($i = 1; $i <= ROUNDS; $i++) {
         $one = rand(MIN_NUM, MAX_NUM);
         $two = rand(MIN_NUM, MAX_NUM);
         $question = "{$one} {$two}";
@@ -28,5 +26,5 @@ function play(): void
 
 function gcd(int $num1, int $num2): int
 {
-    return (bool)($num1 % $num2) ? gcd($num2, $num1 % $num2) : $num2;
+    return $num2 ? gcd($num2, $num1 % $num2) : $num1;
 }

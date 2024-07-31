@@ -3,8 +3,6 @@
 namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\run;
-use function cli\line;
-use function cli\prompt;
 
 use const BrainGames\Engine\ROUNDS;
 

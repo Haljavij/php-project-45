@@ -3,8 +3,6 @@
 namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\run;
-use function cli\line;
-use function cli\prompt;
 
 use const BrainGames\Engine\ROUNDS;
 
@@ -16,7 +14,7 @@ const OPERATOR = ['+', '-', '*'];
 function play(): void
 {
     $result = [];
-    for ($i = 0; $i < ROUNDS; $i++) {
+    for ($i = 1; $i <= ROUNDS; $i++) {
         $a = rand(MIN_NUM, MAX_NUM);
         $b = rand(MIN_NUM, MAX_NUM);
         $operationId = array_rand(OPERATOR);
@@ -31,11 +29,16 @@ function play(): void
 
 function calc(int $num1, int $num2, string $operator): int
 {
-    if ($operator === '+') {
-        return $num1 + $num2;
-    } elseif ($operator === '-') {
-        return $num1 - $num2;
-    } else {
-        return $num1 * $num2;
+    switch ($operator) {
+        case '+':
+            $result = $num1 + $num2;
+            break;
+        case '-':
+            $result = $num1 - $num2;
+            break;
+        case '*':
+            $result = $num1 * $num2;
+            break;
     }
+    return $result;
 }
