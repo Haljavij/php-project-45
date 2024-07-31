@@ -24,7 +24,14 @@ function play(): void
     run(GAME_DESCRIPTION, $result);
 }
 
-function gcd(int $num1, int $num2)
+function gcd(int $num1, int $num2): int
 {
-    return $num2 ? gcd($num2, $num1 % $num2) : $num1;
+    $rem = $num1 % $num2;
+
+    while ($rem > 0) {
+        $num1 = $num2;
+        $num2 = $rem;
+        $rem = $num1 % $num2;
+    }
+    return $num2;
 }
